@@ -1,6 +1,6 @@
 # **Low Power Design Workshop By Srikanth Jadcherla and VLSI Systems Design**
 
-One of professors used to say make either a big chip or a fast chip but never a bigger and faster chip. One of the reasons for this it can get really hot and won't serve the purpose of Fast anymore. Pentium 4 "Prescott" although had impressive and innovative architecture, consumed 100 - 150 Watts of leakage power <sup>(1)</sup>. 
+One of my professors used to say "Make either a big chip or a fast chip but never a bigger and faster chip". If its both big and fast it will generate lot of heat and probably fail. Pentium 4 "Prescott" is classic example (almost 3-4x more transistors, increased die size and frequency aimed to achieve 4GHz), consumed 100 - 150 Watts of leakage power <sup>(1)</sup>. 
 
 Until a year ago I used to undervolt my CPU by about 115mV and that would give me constant performance of 4.0+ GHz, without undervolting I would run into thermal throttling issues. Essentially it will decrease the dynamic power, enabling cooler temperature and better performance. The need for Low power systems is evident from this. Unfortunately because of the Plundervolt bug, Intel and Dell decided to block that feature and thus my CPU thermal throttles.
 
