@@ -1,6 +1,6 @@
 # **Low Power Design Workshop By Srikanth Jadcherla and VLSI Systems Design**
 
-One of professors used to say make either a big chip or a fast chip but never a bigger and faster chip. One of the reasons for this it can get really hot and won't serve the purpose of Fast anymore. Pentium 4 "Prescott" although had impressive and innovative architecture, consumed 100 - 150 Watts of leakage power ^(1)^. 
+One of professors used to say make either a big chip or a fast chip but never a bigger and faster chip. One of the reasons for this it can get really hot and won't serve the purpose of Fast anymore. Pentium 4 "Prescott" although had impressive and innovative architecture, consumed 100 - 150 Watts of leakage power <sup>(1)</sup>. 
 
 Until a year ago I used to undervolt my CPU by about 115mV and that would give me constant performance of 4.0+ GHz, without undervolting I would run into thermal throttling issues. Essentially it will decrease the dynamic power, enabling cooler temperature and better performance. The need for Low power systems is evident from this. Unfortunately because of the Plundervolt bug, Intel and Dell decided to block that feature and thus my CPU thermal throttles.
 
@@ -47,9 +47,9 @@ Early microprocessors like Intel 4004 were pure NMOS design. Lack of complementa
 Power consumed by an SOC implies the switching power proportional to the activity and static power, also known as Leakage power.
 
 ![Power Consumed](/images/power_d_st.PNG)</br>
-**Dynamic power:** Power required to charge and discharge the output capacitance. Vdd decreases with every node, should reduce dynamic power, but increase in number of transistors negates the reduction in Vdd.
+**Dynamic power:** Power required to charge and discharge the output capacitance. V<sub>DD</sub> decreases with every node, should reduce dynamic power, but increase in number of transistors negates the reduction in V<sub>DD</sub>.
 
-**Static Power /Leakage Power:** Power consumed when idle, it could be because of various factors ^(2)^
+**Static Power /Leakage Power:** Power consumed when idle, it could be because of various factors <sup>(2)</sup>
 1. Subthreshold Current
 2. Drain induced Barrier Lowering
 3. Punchthrough
@@ -61,7 +61,7 @@ Power consumed by an SOC implies the switching power proportional to the activit
 **Energy** is power consumed per unit time, it's the capacity that is packed. Directly affects weight and cost, indirectly affects form factor. So how much is enough?
 
 **Power Management** is often the problem of Density, Delivery, Leakage and Lifetime
-1. Density: is power consumed in unit area, meaning heat generated, meaning cost required to hdissipate heat. High density close to batteries has caused fires in cellphones and laptops.
+1. Density: is power consumed in unit area, meaning heat generated, meaning cost required to dissipate heat. High density close to batteries has caused fires in cellphones and laptops.
 2. Delivery: is the amount of current that needs to be delivered. As Vdd decreases current delivery increases. Hence, delivery is commonly known as IR drop and di/dt problems.
 3. Leakage: is the power consumed when idle. In higher technology nodes this was insignificant, but in sub-micron and deep sub-micron designs because of second order effects this is a significant problem. 
 4. Lifetime: is reliability problem because of ever shrinking technology node. The chip cannot fail because of this, designer has to ensure reliable operation for defined period.
@@ -82,7 +82,7 @@ Power consumed by an SOC implies the switching power proportional to the activit
 **4. Domain:** is the drain of the driver. It indicates which primary rails are driving the signal.</br>
 **5. Spatial Crossing:** is a signal sourced in one island and has a destination in another.</br>
 **6. Temporal Variation:** is the variation of rail over time.</br>
-**7. Isolation:** is a technique to protect a receiving island that is active from a signal originating in an island that is turned off. </br>![Isolation and Parking](/images/isolation_parking.PNG){:height="600px" width="300px"}</br>
+**7. Isolation:** is a technique to protect a receiving island that is active from a signal originating in an island that is turned off. </br> <img src="images/isolation_parking.PNG" width="300px" height="150px"></br>
 **8. Input Isolation/ Parking:** is a technique to arrest input toggles in an island.</br>
 **9. Level Shifter:** is a technique to convert a signal driven by one set of primary rails to another set of primary rails on a spatial crossing.</br>![Level Shifters](/images/level_shifter.png)</br>
 
@@ -93,13 +93,13 @@ Power consumed by an SOC implies the switching power proportional to the activit
 2. DVFS, Power Gating, Retention and VDD standby
    
 There are only 7 ways the CMOS voltage can be controlled, it's as shown below</br>
-![Voltage control techniques](/images/volatge_control.png){:height="800px" width="400px"}</br>
+<img src="images/volatge_control.png" width="400px" height="400px"></br>
 By varying any of these, applied voltage thus the output voltage level can be controlled.
 
 **Power Management Techniques**
 1. **Clock Gating:** Clock trees are responsible for a significant portion of dynamic power. The most common way to reduce this is to switch off the clocks when not in use. This technique is called Clock Gating.</br>![Clock Gating](/images/clk_gating.PNG)
-2. **Multi-threshold:** Leakage depends exponentially on V~TH~. Many PDK have multi-Vt cells. The idea is to replace non-critical path cells with slow, less leaky High V~TH~ cells. There by minimizing the leakage. </br> ![Mutli Threshold](/images/multi_vt.PNG)</br>
-3. **Multi-Voltage:** Dynamic power is proportional to V~DD~^2^. Hence, lowering V~DD~ decreases dynamic power significantly, but also makes the gates slower. </br>
+2. **Multi-threshold:** Leakage depends exponentially on V<sub>TH</sub>. Many PDK have multi-Vt cells. The idea is to replace non-critical path cells with slow, less leaky High V<sub>TH</sub> cells. There by minimizing the leakage. </br> ![Mutli Threshold](/images/multi_vt.PNG)</br>
+3. **Multi-Voltage:** Dynamic power is proportional to V<sub>DD</sub><sup>2</sup>. Hence, lowering V<sub>DD</sub> decreases dynamic power significantly, but also makes the gates slower. </br>
 Consider an example, Timing critical components like cache can be run at max voltage, the CPU can be run at a slightly reduced voltage and other non-critical components can be run at further reduced voltage. This will provide significant power reduction.</br> 
 ![Multi VDD](/images/multi_vdd.PNG)
 4. **Power Gating:** Leakage power is increasing with new technology node, since we are moving towards more efficient hand held devices the need for reducing leakage power is higher. One of the ways to achieve that is to switch off the block that are not in use. This technique is called Power Gating
