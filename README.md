@@ -30,7 +30,7 @@ We are heading towards handheld devices, for them to be efficient we need to opt
 
 
 > ### CMOS Basics
-Early microprocessors like Intel 4004 were pure NMOS design. Lack of complementary devices (PMOS and NMOS) in a pure NMOS tech made realization of inverters with zero static power non-trivial. Hence, in 1980s shift to CMOS was made. CMOS are voltage controlled devices, primary reason to be used in Low power design
+Early microprocessors like Intel 4004 were pure NMOS design. Lack of complementary devices (PMOS and NMOS) in a pure NMOS tech made realization of inverters with zero static power non-trivial. Hence, in 1980s shift to CMOS was made. CMOS are voltage controlled devices, primary reason to be used in Low power design</br>
 ![CMOS Basics](/images/cmos_basics.png)
 
 |        |State of Design Elements||
@@ -82,9 +82,9 @@ Power consumed by an SOC implies the switching power proportional to the activit
 **4. Domain:** is the drain of the driver. It indicates which primary rails are driving the signal.</br>
 **5. Spatial Crossing:** is a signal sourced in one island and has a destination in another.</br>
 **6. Temporal Variation:** is the variation of rail over time.</br>
-**7. Isolation:** is a technique to protect a receiving island that is active from a signal originating in an island that is turned off. ![Isolation and Parking](/images/isolation_parking.png){:height="600px" width="300px"}</br>
+**7. Isolation:** is a technique to protect a receiving island that is active from a signal originating in an island that is turned off. </br>![Isolation and Parking](/images/isolation_parking.png){:height="600px" width="300px"}</br>
 **8. Input Isolation/ Parking:** is a technique to arrest input toggles in an island.</br>
-**9. Level Shifter:** is a technique to convert a signal driven by one set of primary rails to another set of primary rails on a spatial crossing. ![Level Shifters](/images/level_shifter.png)</br>
+**9. Level Shifter:** is a technique to convert a signal driven by one set of primary rails to another set of primary rails on a spatial crossing.</br>![Level Shifters](/images/level_shifter.png)</br>
 
 </br>
 
@@ -97,8 +97,8 @@ There are only 7 ways the CMOS voltage can be controlled, it's as shown below</b
 By varying any of these, applied voltage thus the output voltage level can be controlled.
 
 **Power Management Techniques**
-1. **Clock Gating:** Clock trees are responsible for a significant portion of dynamic power. The most common way to reduce this is to switch off the clocks when not in use. This technique is called Clock Gating.![Clock Gating](/images/clk_gating.png)
-2. **Multi-threshold:** Leakage depends exponentially on V~TH~. Many PDK have multi-Vt cells. The idea is to replace non-critical path cells with slow, less leaky High V~TH~ cells. There by minimizing the leakage. ![Mutli Threshold](/images/multi_vt.png)</br>
+1. **Clock Gating:** Clock trees are responsible for a significant portion of dynamic power. The most common way to reduce this is to switch off the clocks when not in use. This technique is called Clock Gating.</br>![Clock Gating](/images/clk_gating.png)
+2. **Multi-threshold:** Leakage depends exponentially on V~TH~. Many PDK have multi-Vt cells. The idea is to replace non-critical path cells with slow, less leaky High V~TH~ cells. There by minimizing the leakage. </br> ![Mutli Threshold](/images/multi_vt.png)</br>
 3. **Multi-Voltage:** Dynamic power is proportional to V~DD~^2^. Hence, lowering V~DD~ decreases dynamic power significantly, but also makes the gates slower. </br>
 Consider an example, Timing critical components like cache can be run at max voltage, the CPU can be run at a slightly reduced voltage and other non-critical components can be run at further reduced voltage. This will provide significant power reduction.</br> 
 ![Multi VDD](/images/multi_vdd.png)
