@@ -109,10 +109,12 @@ The idea is to provide two modes, low power and active mode. The goal is to swit
 6. **Dynamic or Adaptive Voltage Frequency Scaling:** This technique provides reduction in dynamic power by scaling just voltage called Dynamic Voltage scaling (DVS) or both voltage and frequency called Dynamic voltage and Frequency Scaling (DVFS) or Adaptive voltage and frequency scaling (AVFS). We know that dynamic power is proportional to frequency and square of voltage, reducing clock frequency will provide proportional power reduction, voltage provides much better reduction. Thus using these two together will provide the lowest possible power consumption. </br>
 7. **Low VDD Standby:** V<sub>DD</sub> is lowered just enough to have the memory elements retain their state. The outputs have to have level shifter. </br>
 </br>
+
 > ### State Space and Retention
 On the hardware level we have a state retention capable ciruit, but we should ask when and how this state is retained. It can be accomplished either by Hardware or by Software. Irrespective of the method the idea remains the same. An example below
 <img src="images/srpg.PNG" width="600px" height="400px"></br>
 </br>
+
 > ### Voltage Aware Booleans 
 It provided modeling ability closer to physics and also made for a better understanding of mixed signal power management elements and digital design elements. This has to be analyzed using the CMOS operating states. <img src="images/vaBool.PNG" width="500px" hegiht="300px"></br></br> 
 
