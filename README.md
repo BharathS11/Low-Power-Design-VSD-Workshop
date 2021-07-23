@@ -118,22 +118,25 @@ It provided modeling ability closer to physics and also made for a better unders
 > ### Power Management and Bugs
 > ### Verification Strategies of MV Design
 > ### Island Ordering and Mobility
+
+</br>
+
 > ### Labs
 Three circuits were simulated to understand the need for low power design techniques.
 1. **Inverter:** Inverter chain with two separate domains, V2 domain is ramped up and we can see the output of island 2 after CMOS starts conducting.</br>
-<img src="images/inverter_sch.PNG" width="500px" height="300px">
+<img src="images/inverter_sch.PNG" width="500px" height="200px">
 <img src="images/inverter.png" width="500px" height="300px"></br>
 </br>   
-2. **Nand:** Here Vdd and the input voltages V1 and V2 are varied, Vdd and V1 are ramped up while V2 is ramped down. When V1 is low, the output should be high, since the Vdd is also low the CMOS are not conducting. V2 is low and Vdd is sufficiently high, we see the output slowly rise to high.
-<img src="images/nand_sch.PNG" width="" height=""></br>
-<img src="images/nand.png" width="" height=""></br>
+2. **Nand:** Here Vdd and the input voltages V1 and V2 are varied, Vdd and V1 are ramped up while V2 is ramped down. When V1 is low, the output should be high, since the Vdd is also low the CMOS are not conducting. V2 is low and Vdd is sufficiently high, we see the output slowly rise to high.</br>
+<img src="images/nand_sch.PNG" width="500px" height="300px"></br>
+<img src="images/nand.png" width="500px" height="300px"></br>
 </br>
-3. **4bit Shift Register:**
+3. **4bit Shift Register:** Voltage variationg effect on the Sequential elements is simulated here. V1 the combinational domain is held constant. While V2, sequential domain is ramped up, we can see the output of each flop once V2 is sufficiently high for CMOS to conduct.</br>
+<img src="images/sr4_sch.PNG" width="700px" height="300px">
+<img src="images/sr4.png" width="700px" height="300px">
+</br>
 
-
-
-
-References:
+## References:
 1. Verification Methodology Manual for Low Power - Srikanth Jadcherla, Janick Bergeron, Yoshio Inoue and David Flynn
 2. ECE410, Prof Andrew Mason, Michigan State University 
 3. [The Quest for More Processing Power, Part One: "Is the single core CPU Doomed?"](https://www.anandtech.com/show/1611)
