@@ -29,7 +29,7 @@ We are heading towards handheld devices, for them to be efficient we need to opt
 </br>
 
 
-> ### CMOS Basics
+> ## CMOS Basics
 Early microprocessors like Intel 4004 were pure NMOS design. Lack of complementary devices (PMOS and NMOS) in a pure NMOS tech made realization of inverters with zero static power non-trivial. Hence, in 1980s shift to CMOS was made. CMOS are voltage controlled devices, primary reason to be used in Low power design</br>
 ![CMOS Basics](/images/cmos_basics.PNG)
 
@@ -42,7 +42,7 @@ Early microprocessors like Intel 4004 were pure NMOS design. Lack of complementa
 
 </br>
 
-> ### Power
+> ## Power
  
 Power consumed by an SOC implies the switching power proportional to the activity and static power, also known as Leakage power.
 
@@ -68,10 +68,19 @@ Power consumed by an SOC implies the switching power proportional to the activit
 
 </br>
 
-> ### Case Study
-> 1. Thermal Runaway - Why Samsung phones caught fire?
-> 2. Cost and Characteristics of Fans Mounted on CPU
-> 3. Iphone 6 Battery Degradation Law suit
+> ## Case Study
+> 1. **Thermal Runaway - Why Samsung phones caught fire?**
+Thermal runaway is a process wherein increased temperature causes more heat and further increasing temperature. In batteries thermal runaway occurs when there is thermal, mechanical, short circuiting or electrochemical compromise. Recently samsung confirmed faults in their battery. "The problems centred on insufficient insulation material within the batteries and a design that did not give enough room to safely accommodate the batteries' electrodes" <sup>(7)</sup>
+
+<img src="images/samsung1.jpg" width="" height="300px"/><img src="images/samsung2.jpg" width="" height="300px"/></br>
+</br>
+
+> 2. **Cost and Characteristics of Fans Mounted on CPU**
+CPU cooling is a big deal today as the TDP is increasing in modern CPUs. Without a good Cooling solutions problems like thermal throttle can reduce the performance of the CPUs. Cost of cooling solutions can be upwards of $100, these include using multiple fans with variable RPM, Water based cooling and Vapour chambers in Laptops. High quality thermal paste, heatsinks and fans all amount high cost when building or purchasing a computer. For Laptops there multiple external solutions which in my experience hardly decreases the temperature. 
+</br>
+
+> 3. **Iphone 6 Battery Degradation Law suit**
+"Batterygate" is popularly referred to apples delibrate processor slowdown in order to prevent degraded batteries from shutting down when under high load. Iphone models 6,7 had manufacturing defect with battery and inorder to protect the phone, apple with new OS update started shutdown phones. 
 
 </br>
 
@@ -88,7 +97,7 @@ Power consumed by an SOC implies the switching power proportional to the activit
 
 </br>
 
-> ### Voltage Control Techniques
+> ## Voltage Control Techniques
  There are only 7 ways the CMOS voltage can be controlled, it's as shown below</br>
 <img src="images/volatge_control.png" width="400px" height="400px"></br>
 By varying any of these, applied voltage thus the output voltage level can be controlled.
@@ -110,15 +119,15 @@ The idea is to provide two modes, low power and active mode. The goal is to swit
 7. **Low VDD Standby:** V<sub>DD</sub> is lowered just enough to have the memory elements retain their state. The outputs have to have level shifter. </br>
 </br>
 
-> ### State Space and Retention
+> ## State Space and Retention
 On the hardware level we have a state retention capable ciruit, but we should ask when and how this state is retained. It can be accomplished either by Hardware or by Software. Irrespective of the method the idea remains the same. An example below
 <img src="images/srpg.PNG" width="600px" height="400px"></br>
 </br>
 
-> ### Voltage Aware Booleans 
+> ## Voltage Aware Booleans 
 It provided modeling ability closer to physics and also made for a better understanding of mixed signal power management elements and digital design elements. This has to be analyzed using the CMOS operating states. <img src="images/vaBool.PNG" width="500px" hegiht="300px"></br></br> 
 
-> ### Power Management Bugs
+> ## Power Management Bugs
 Power management is basically controlling different islands or logic elements based on the usage or requirement in-order to achieve the lowest possible power consumption. So what should we be looking for
 1. Isolation/ Level shifting bugs
 2. Control sequencing bugs
@@ -153,12 +162,14 @@ This can be classified as Structural, Control and Architectural Errors.
 
 </br>
 
-> ### Verification Strategies of MV Design
-> ### Mobile and Mobility
-
+> ## Verification Strategies of MV Design
+The complexity of verification increases just because there are so many checks needed to be carried out. The typical power management system looks as shown:</br>
+<img src="images/tb.PNG" width="400px" height="300px"></br>
+The testbench is as follows</br>
+<img src="images/tb1.png" width="400px" height="300px">
 </br>
 
-> ### Labs
+> ## Labs
 Three circuits were simulated to understand the need for low power design techniques.
 1. **Inverter:** Inverter chain with two separate domains, V2 domain is ramped up and we can see the output of island 2 after CMOS starts conducting.</br>
 <img src="images/inverter_sch.PNG" width="500px" height="200px">
@@ -180,5 +191,6 @@ Three circuits were simulated to understand the need for low power design techni
 4. [Leakage and Low Power, R Saleh, UBC Canada](https://courses.ece.ubc.ca/579/579.lect6.leakagepower.08.pdf)
 5. [George Sobral Silveira, Alisson V. Brito, Helder F. de A. Oliveira, Elmar U. K. Melcher, "Open SystemC Simulator with Support for Power Gating Design", International Journal of Reconfigurable Computing, vol. 2012, Article ID 793190, 8 pages, 2012.](https://doi.org/10.1155/2012/793190)
 6. [Power Gating with Retention](http://vlsi-soc.blogspot.com/2013/03/state-retention-power-gating.html)
+7. [Samsung Note7 Battery Faults](https://www.bbc.com/news/business-38714461)
 
 
