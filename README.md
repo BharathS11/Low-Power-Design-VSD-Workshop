@@ -115,9 +115,44 @@ On the hardware level we have a state retention capable ciruit, but we should as
 </br>
 > ### Voltage Aware Booleans 
 It provided modeling ability closer to physics and also made for a better understanding of mixed signal power management elements and digital design elements. This has to be analyzed using the CMOS operating states. <img src="images/vaBool.PNG" width="500px" hegiht="300px"></br></br> 
-> ### Power Management and Bugs
+
+> ### Power Management Bugs
+Power management is basically controlling different islands or logic elements based on the usage or requirement in-order to achieve the lowest possible power consumption. So what should we be looking for
+1. Isolation/ Level shifting bugs
+2. Control sequencing bugs
+3. Retention scheme/control errors
+4. Retention selection errors
+5. Electrical problems like memory corruption
+6. Power sequencing/voltage scheduling errors
+7. Hardware-software deadlock
+8. Power gating collapse/ dysfunction
+9. Power On-Reset/ bring up problems
+10. Thermal runaway/ overheating
+
+
+This can be classified as Structural, Control and Architectural Errors.
+1. **Structural Errors:** Needs to be checked throughout the implementation flow.  As the name suggest it checks protection against Missing cell, Redundant cell, Incorrect cell, power domain, isolation polarity and iso-enable.
+2. **Control Errors:** This checks against incorrect sequence of events. For example, this will protect against incorrect state retention sequence.
+3. **Architectural Errors:** This checks against non-functional errors. A chip may be functionally working, but there may be some block that needs to turned off after an operation but doesn't. The chip is working but may consume more power.</br>
+>> Classification
+1. **Structural Errors**
+   1. Missing Isolation, Level shifters
+   2. Devices in wrong domains
+   3. Wrong rail connections
+2. **Control Errors**
+   1. Mistimed Control signals
+   2. Incorrect control activation sequence
+   3. Incorrect gating/ ungating in off/low power states
+3. **Architectural Errors**
+   1. Incorrect partitions, policies
+   2. Incorrect scheduling of resources
+</br>
+
+
+</br>
+
 > ### Verification Strategies of MV Design
-> ### Island Ordering and Mobility
+> ### Mobile and Mobility
 
 </br>
 
