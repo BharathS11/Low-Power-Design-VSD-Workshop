@@ -169,6 +169,20 @@ The testbench is as follows</br>
 <img src="images/tb1.png" width="400px" height="300px">
 </br>
 
+### Power management verification requirements:
+1. Verify Power Control Management
+   1. Ensure power transition when expected
+   2. HW conditions that can cause power state changes
+   3. Changes requested by SW
+2. Verify the domains behavior in each state
+   1. check LP related behavior
+   2. Consider LP in normal checks
+3. Converage
+   1. Exercise all states, all transistions, in all orders
+4. Power Aware debug
+   1. Have an intuitive and feature rich debug tool
+</br>
+
 > ## Labs
 Three circuits were simulated to understand the need for low power design techniques.
 1. **Inverter:** Inverter chain with two separate domains, V2 domain is ramped up and we can see the output of island 2 after CMOS starts conducting.</br>
