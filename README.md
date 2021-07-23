@@ -80,7 +80,7 @@ CPU cooling is a big deal today as the TDP is increasing in modern CPUs. Without
 </br>
 
 > 3. **Iphone 6 Battery Degradation Law suit**
-"Batterygate" is popularly referred to apples delibrate processor slowdown in order to prevent degraded batteries from shutting down when under high load. Iphone models 6,7 had manufacturing defect with battery and inorder to protect the phone, apple with new OS update started shutdown phones. 
+"Batterygate" is popularly referred to apples delibrate processor slowdown in order to prevent degraded batteries from shutting down when under high load. Iphone models 6,7 had manufacturing defect with battery and in-order to protect the phone, apple with new OS update started shuting down phones. 
 
 </br>
 
