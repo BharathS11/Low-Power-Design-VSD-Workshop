@@ -72,7 +72,7 @@ Power consumed by an SOC implies the switching power proportional to the activit
 > 1. **Thermal Runaway - Why Samsung phones caught fire?**
 Thermal runaway is a process wherein increased temperature causes more heat and further increasing temperature. In batteries thermal runaway occurs when there is thermal, mechanical, short circuiting or electrochemical compromise. Recently samsung confirmed faults in their battery. "The problems centred on insufficient insulation material within the batteries and a design that did not give enough room to safely accommodate the batteries' electrodes" <sup>(7)</sup>
 
-<img src="images/samsung1.jpg" width="" height="300px"/><img src="images/samsung2.jpg" width="" height="300px"/></br>
+<img src="images/samsung1.jpg" width="400px" height="250px"/><img src="images/samsung2.jpg" width="400px" height="250px"/></br>
 </br>
 
 > 2. **Cost and Characteristics of Fans Mounted on CPU**
