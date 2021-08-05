@@ -183,6 +183,27 @@ The testbench is as follows</br>
    1. Have an intuitive and feature rich debug tool
 </br>
 
+> ## Island Ordering 
+Island ordering is a mathematical concept of spatial and temporal dependencies. It imposes restrictions on spatial connectivity based on temporal states or vice-versa. It can be used to predict power sequences for wakeup/shutdown and to statically detect dependencies that lead to deadlock.</br>
+<img src="images/islandorder_ex.PNG" width="500px" height="300px"></br>
+1. Clock is sent from IslandA to IslandB, Island1 is switched on/off in time. This can either be intentional or un-intentional.
+2. If intentional, wrong domain partition, nightmare to verify and is the #1 cause for deadlock or DOA
+3. If unintentional, clock is lost 
+
+### Island ordering provides us with rules to avoid issues like this
+1. If island A is relatively more on than Island B, then A > B,
+   1. No state exists where B is on and A is off
+   2. A=0n, B=0n **OK**
+   3. A=0n, B=0ff **OK**
+   4. A=off, B=off **OK**
+   5. A=0ff, B=0n **NOT OK**
+2. If A=off, B=0n and A=0n, B=0ff are both possible, then A and B are Disjoint
+3. If A and B are identical on/off all the time, they are equivalent
+
+### IMPORTANT RULE: **No Control signal shall pass from a lower order island to a higher order island**
+### If DISJOINT **Do not send control signals between them**
+</br>
+
 > ## Labs
 Three circuits were simulated to understand the need for low power design techniques.
 1. **Inverter:** Inverter chain with two separate domains, V2 domain is ramped up and we can see the output of island 2 after CMOS starts conducting.</br>
