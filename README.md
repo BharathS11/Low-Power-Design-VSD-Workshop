@@ -185,7 +185,7 @@ The testbench is as follows</br>
 
 > ## Island Ordering 
 Island ordering is a mathematical concept of spatial and temporal dependencies. It imposes restrictions on spatial connectivity based on temporal states or vice-versa. It can be used to predict power sequences for wakeup/shutdown and to statically detect dependencies that lead to deadlock.</br>
-<img src="images/islandorder_ex.PNG" width="500px" height="300px"></br>
+<img src="images/islandorder_ex.png" width="500px" height="300px"></br>
 1. Clock is sent from IslandA to IslandB, Island1 is switched on/off in time. This can either be intentional or un-intentional.
 2. If intentional, wrong domain partition, nightmare to verify and is the #1 cause for deadlock or DOA
 3. If unintentional, clock is lost 
